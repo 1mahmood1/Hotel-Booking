@@ -521,7 +521,7 @@ aside .bottom-part .weather-card .license {
 .container .end-cards .card-two,
 .container .end-cards .card-three {
     width: 280px;
-    height: 180px;
+    height: 1800px;
     background-color: white;
     border-radius: 10px;
     font-size: 10px;
@@ -761,19 +761,16 @@ aside .bottom-part .weather-card .license {
     .container .main .card-two {
         margin-top:20px ;
         margin-bottom: 20px;
-        transform: rotate(5deg);
-
     }
 
     .container > .end-cards {
         flex-direction: column;
     }
 
-    
-
-    .container > .main:hover { 
+    .container > .main { 
         .card-one {
             transform: none !important;
+
         }
         .card-two {
             transform: none !important; 
