@@ -1,12 +1,10 @@
-
 :root {
-    --main-color: hsl(30, 24%, 93%) ;
-    --secondary-color : hsl(36, 22%, 86%);
-    --primary-color : hsl(40, 60%, 98%);
-    --primary-font : "primary-font" , sans-serif;
-    --dotted-color :rgba(0, 0, 0, 0.356) ;
+    --main-color: hsl(30, 24%, 93%);
+    --secondary-color: hsl(36, 22%, 86%);
+    --primary-color: hsl(40, 60%, 98%);
+    --primary-font: "primary-font", sans-serif;
+    --dotted-color: rgba(0, 0, 0, 0.356);
 }
-
 
 @font-face {
     font-family: "DMMono";
@@ -31,56 +29,23 @@ body {
 .container {
     background: linear-gradient(
         120deg,
-        var(--main-color) ,
-        var(--secondary-color) ,
-        var(--primary-color) 
-        );
+        var(--main-color),
+        var(--secondary-color),
+        var(--primary-color)
+    );
     min-height: 100vh;
     display: grid;
     grid-template-columns: max-content 1fr;
-    grid-template-rows: repeat(6 , minmax(max-content, auto));
+    grid-template-rows: repeat(6, minmax(max-content, auto));
     grid-template-areas: 
     "aside top"
     "aside head"
     "aside main"
     "aside main"
     "aside main"
-    "aside cards" 
-    ;
-    min-height: 100%;
+    "aside cards";
 }
 
-@media (max-width: 576px)  {
-    aside {
-        display: none !important;
-    }
-    
-    .container {
-        grid-template-columns: auto;
-        grid-template-rows: repeat(4 , max-content) ;
-        grid-template-areas: 
-        "top"
-        "head"
-        "main"
-        "main"
-        "cards"
-        ;
-        
-    }
-    .container > .header  {
-        grid-area: head;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center  ;
-
-    }
-    .container .main .card-one img {
-        display: none
-    }
-
-}
 
 ::selection {
     background-color: hsl(340, 48%, 52%);
@@ -103,10 +68,8 @@ aside {
     height: 100vh;
 }
 
-
 aside .top-part .header {
     border-bottom: dotted 1px black;
-
 }
 
 aside .top-part .header {
@@ -142,17 +105,14 @@ aside .top-part .links {
     padding-top: 20px;
 }
 
-aside .top-part .links iconify-icon{
-
+aside .top-part .links iconify-icon {
     font-size: 20px;
 }
-
 
 aside .top-part .links .aside {
     font-size: 15px;
     padding: 4px 0px 4px 10px;
     cursor: pointer;
-    
 }
 
 aside .top-part .links .aside iconify-icon {
@@ -163,27 +123,11 @@ aside .top-part .links .aside a {
     cursor: pointer;
 }
 
-aside .top-part .links .aside:nth-child(1) {
-    gap: 15px;
+aside .top-part .links .aside {
+    gap: 20px;
 }
 
-aside .top-part .links .aside:nth-child(2) {
-    gap: 17px;
-}
-
-aside .top-part .links .aside:nth-child(3) {
-    gap: 23px;
-}
-
-aside .top-part .links .aside:nth-child(4) {
-    gap: 21px;
-}
-
-aside .top-part .links .aside:nth-child(5) {
-    gap: 19px;
-}
-
-aside .top-part .links .aside:hover{
+aside .top-part .links .aside:hover {
     background-color: white;
     border-radius: 10px;
     width: 200px;
@@ -195,7 +139,7 @@ aside .top-part .links ul {
     list-style: none;
 }
 
-aside .top-part .links li ,
+aside .top-part .links li,
 aside .top-part .links a {
     list-style: none;
     text-decoration: none;
@@ -205,19 +149,19 @@ aside .top-part .links a {
     color: black;
 }
 
-aside .bottom-part .weather-card{
+aside .bottom-part .weather-card {
     display: flex;
     flex-direction: column;
     justify-content: space-around;   
     align-items: center;  
-    padding: 0px 20px ;  
+    padding: 0px 20px;  
 }
 
 aside .bottom-part .weather-card .card {
     background-color: hsl(45, 100%, 74%);
     width: 170px;
     text-align: start;
-    padding: 10px 20px ;
+    padding: 10px 20px;
     border-radius: 20px;
     display: flex;
     overflow: hidden;
@@ -229,7 +173,7 @@ aside .bottom-part .weather-card .card:hover {
 }
 
 aside .bottom-part .weather-card .card .img {
-    transform: translate(40px , -30px);
+    transform: translate(40px, -30px);
 }
 
 aside .bottom-part .weather-card .card-p p {
@@ -252,12 +196,14 @@ aside .bottom-part .weather-card .license {
     opacity: 0.5;
 }
 
+
 /* End Aside */
 
 
 /* Start Top */
 
-.container .top   {
+
+.container .top {
     grid-area: top;
     font-size: 15px;
     opacity: 0.7;
@@ -273,11 +219,12 @@ aside .bottom-part .weather-card .license {
 
 /* Start Header */
     
-.container > .header  {
+.container > .header {
     grid-area: head;
     display: flex;
     justify-content: space-between;
-    
+    align-items: center;
+    text-align: center;
 }
 
 .container > .header p {    
@@ -295,7 +242,7 @@ aside .bottom-part .weather-card .license {
     all: unset;    
     display: inline-block;
     font-size: 13px;
-    padding: 5px 10px ;
+    padding: 5px 10px;
     cursor: pointer;
     border-radius: 20px;
 }
@@ -310,7 +257,6 @@ aside .bottom-part .weather-card .license {
     color: white;
     background-color: rgb(41, 41, 41);
 }
-
 
 .container > .header > .links a:nth-of-type(2) {
     background-color: rgb(41, 41, 41);
@@ -330,11 +276,9 @@ aside .bottom-part .weather-card .license {
     align-items: center;
     gap: 20px;
     padding-right: 50px;
-    
 }   
 
 /* End Header */
-
 
 /* Start Main */
 
@@ -367,13 +311,13 @@ aside .bottom-part .weather-card .license {
 }
 
 .container .main .card-one, 
-.container .main  .card-two{
+.container .main .card-two {
     transition: 0.8s;
 }
 
 /* Card One */
 
-.container .main .card-one img{
+.container .main .card-one img {
     width: 200px;
     height: auto;
 }
@@ -384,40 +328,35 @@ aside .bottom-part .weather-card .license {
     background-color: white;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4 , auto);
+    grid-template-rows: repeat(4, auto);
     grid-template-areas: 
     "q-one"
     "q-two"
     "q-three"
-    "q-four"
-    ;
+    "q-four";
     background: linear-gradient(
-        90deg ,
-        hsl(30, 24%, 93%) ,
+        90deg,
+        hsl(30, 24%, 93%),
         hsl(35, 60%, 96%) 
-        );
-        border-radius: 15px;
-        transform: rotate(-5deg) ;
-    
-
+    );
+    border-radius: 15px;
+    transform: rotate(-5deg);
 }
-    
 
-.container .main .card-one .q-one ,
-.container .main .card-one .q-two ,
-.container .main .card-one .q-three ,
+.container .main .card-one .q-one,
+.container .main .card-one .q-two,
+.container .main .card-one .q-three,
 .container .main .card-one .q-four {
     display: flex;
     justify-content: space-between;
     align-items: top;
     flex-direction: row;
-    padding: 20px 30px ;
-    
+    padding: 20px 30px;
 }
 
 .container .main .card-one .q-one p,
-.container .main .card-one .q-two p ,
-.container .main .card-one .q-three p ,
+.container .main .card-one .q-two p,
+.container .main .card-one .q-three p,
 .container .main .card-one .q-four p {
     margin: 0;
 }
@@ -440,8 +379,8 @@ aside .bottom-part .weather-card .license {
     padding-top: 10px;
 }
 
-.container .main .card-one .q-two  .left , 
-.container .main .card-one .q-two  .right{
+.container .main .card-one .q-two .left, 
+.container .main .card-one .q-two .right {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -449,23 +388,18 @@ aside .bottom-part .weather-card .license {
     padding: 0px 30px;
 }
 
-.container .main .card-one .q-two  p:nth-of-type(2) {
+.container .main .card-one .q-two p:nth-of-type(2) {
     padding: 5px 0px;
     font-size: 30px;
     font-family: var(--primary-font);
-    
 }
-
-
 
 .container .main .card-one .q-one {
     grid-area: q-one;
     border-bottom: dotted 1px var(--dotted-color);
-    
 }
 
 .container .main .card-one .q-two {
-    
     grid-area: q-two;
     border-bottom: dotted 1px var(--dotted-color);
 }
@@ -476,7 +410,7 @@ aside .bottom-part .weather-card .license {
     font-size: 13px;
 }
 
-.container .main .card-one .q-three .left p:nth-of-type(3) ,
+.container .main .card-one .q-three .left p:nth-of-type(3),
 .container .main .card-one .q-three .right p:nth-of-type(3) {
     opacity: .8;
 }
@@ -486,7 +420,7 @@ aside .bottom-part .weather-card .license {
     font-size: 15px;
 }
 
-.container .main .card-one .q-four p , 
+.container .main .card-one .q-four p, 
 .container .main .card-one .q-four img {
     padding-top: 10px;
 }
@@ -503,36 +437,32 @@ aside .bottom-part .weather-card .license {
     height: 420px;
     background: linear-gradient(
         45deg,
-        hsl(15, 74%, 41%) ,
+        hsl(15, 74%, 41%),
         hsl(22, 72%, 56%) 
     );
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4 , auto);
+    grid-template-rows: repeat(4, auto);
     grid-template-areas: 
     "q-one"
     "q-two"
     "q-three"
-    "q-four"
-    ;
+    "q-four";
     border-radius: 15px;
-    transform: rotate(5deg) ;
-
+    transform: rotate(5deg);
 }
 
 .container .main .card-two {
     color: hsl(41, 100%, 94%);
-
 }
 
-.container .main .card-two p{
+.container .main .card-two p {
     margin: 0;
     padding-left: 30px;
     padding-right: 30px;
-
 }
 
-.container .main .card-two img{
+.container .main .card-two img {
     width: 60px;
 }
 
@@ -540,7 +470,6 @@ aside .bottom-part .weather-card .license {
     padding-top: 15px;
     box-sizing: border-box;
     display: flex;
-
 }
 
 .container .main .card-two .header {
@@ -549,7 +478,7 @@ aside .bottom-part .weather-card .license {
 }
 
 .container .main .card-two p:nth-of-type(1) {
-    padding-top: 20px ;
+    padding-top: 20px;
 }
 
 .container .main .card-two p:nth-of-type(2) {
@@ -557,21 +486,16 @@ aside .bottom-part .weather-card .license {
     font-family: var(--primary-font);
 }
 
-
 .container .main .card-two p:nth-of-type(1) {
     font-family: var(--primary-font);
 }
 
 .container .main .card-two p:nth-of-type(5) {
-    font-family:var(--primary-font) ;
+    font-family: var(--primary-font);
     opacity: .8;
 }
 
-
-
-
-.container > .main:hover{ 
-
+.container > .main:hover { 
     .card-one {
         transform: translateX(-100px) rotate(5deg);   
     }
@@ -581,7 +505,6 @@ aside .bottom-part .weather-card .license {
 }
 
 /* End Main */
-
 
 /* Start End-cards */
 
@@ -594,26 +517,25 @@ aside .bottom-part .weather-card .license {
     padding-bottom: 40px;
 }
 
-.container .end-cards .card-one ,
-.container .end-cards .card-two ,
+.container .end-cards .card-one,
+.container .end-cards .card-two,
 .container .end-cards .card-three {
-    width: 300px;
-    height: 200px;
+    width: 280px;
+    height: 180px;
     background-color: white;
     border-radius: 10px;
     font-size: 10px;
     padding: 0 20px;
 }
 
-
-.container .end-cards .card-one p ,
+.container .end-cards .card-one p,
 .container .end-cards .card-three p {
     margin: 0;
     padding-top: 10px;
 }
 
-.container .end-cards .card-one .header ,
-.container .end-cards .card-two .header ,
+.container .end-cards .card-one .header,
+.container .end-cards .card-two .header,
 .container .end-cards .card-three .header {
     display: flex;
     align-items: center;
@@ -627,37 +549,34 @@ aside .bottom-part .weather-card .license {
     border-radius: 10px;
 }
 
-.container .end-cards .card-one .header .left ,
-.container .end-cards .card-two .header .left ,
+.container .end-cards .card-one .header .left,
+.container .end-cards .card-two .header .left,
 .container .end-cards .card-three .header .left {
     display: flex;
     align-items: center;
     font-size: 15px;
 }
 
-.container .end-cards .card-one .header .left p ,
-.container .end-cards .card-two .header .left p ,
+.container .end-cards .card-one .header .left p,
+.container .end-cards .card-two .header .left p,
 .container .end-cards .card-three .header .left p {
     padding-left: 10px;
     letter-spacing: 2px;
-
 }
 
-
-.container .end-cards .card-one .header .right ,
-.container .end-cards .card-two .header .right ,
-.container .end-cards .card-three .header .right  {
+.container .end-cards .card-one .header .right,
+.container .end-cards .card-two .header .right,
+.container .end-cards .card-three .header .right {
     font-size: 25px;
     font-family: var(--primary-font);
 }
 
-.container > .end-cards > .card-one > p:nth-of-type(1) ,
-.container > .end-cards > .card-two > p:nth-of-type(1)  ,
+.container > .end-cards > .card-one > p:nth-of-type(1),
+.container > .end-cards > .card-two > p:nth-of-type(1),
 .container > .end-cards > .card-three > p:nth-of-type(1) {
     font-size: 20px;
     font-family: var(--primary-font);
-}  
-
+}   
 
 .container .end-cards .card-two img {
     padding: 10px;
@@ -665,13 +584,13 @@ aside .bottom-part .weather-card .license {
     border-radius: 10px;
 }
 
-.container .end-cards .card-two .bottom  {
+.container .end-cards .card-two .bottom {
     display: flex;
     flex-direction: column;
 }
 
-.container .end-cards .card-two .bottom .text-one ,
-.container .end-cards .card-two .bottom .text-two  {
+.container .end-cards .card-two .bottom .text-one,
+.container .end-cards .card-two .bottom .text-two {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -680,7 +599,6 @@ aside .bottom-part .weather-card .license {
     margin: 5px 0px;
     padding: 5px 10px 5px 10px;
     border-radius: 5px;
-    
 }
 
 .container .end-cards .card-two .bottom .text-two .text-two-copy {
@@ -695,7 +613,7 @@ aside .bottom-part .weather-card .license {
     margin: 0;
 }
 
-.container .end-cards .card-two .header p  , 
+.container .end-cards .card-two .header p, 
 .container .end-cards .card-two > p {
     padding-top: 10px;
 }
@@ -721,6 +639,200 @@ aside .bottom-part .weather-card .license {
     border-radius: 10px;
 }
 
-
-
 /* End End-cards */
+
+/* Media Query */
+
+
+
+@media (hover: hover) {
+    .container > .main:hover > .card-one {
+        transform: translateX(-100px) rotate(5deg);   
+    }
+    .container > .main:hover > .card-two {
+        transform: translateX(100px) rotate(-5deg);
+    }
+}
+
+
+
+@media (max-width: 576px) {
+    
+    aside {
+        display: none !important;
+    }
+    
+    
+    /* Start Main Cards */
+
+
+    .container .top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        padding: unset;
+    }
+
+    .container .header p  {
+        display: flex;
+        padding: unset;
+    }
+
+    .container  .header  .links {
+        display: flex;
+        /* Unset cuz it have inhert a 50px padding */
+        padding: inherit;
+        padding-top: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "top"
+        "head"
+        "main"
+        "cards";
+        min-height: 100%;   
+        min-width: 100%; 
+    }
+
+    .container > .header {
+        grid-area: head;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .container > .main > img {
+        display: none;
+    }
+
+    .container > .main {
+        flex-direction: column;
+        align-items: center;
+    } 
+
+    .container .main .card-one, 
+    .container .main .card-two {
+        width: 300px;
+        height: 320px;
+    }
+
+    .container .main .card-one {
+        margin-top: 20px;
+    }
+        
+    .container .main .card-one .q-one,
+    .container .main .card-one .q-two,
+    .container .main .card-one .q-three,
+    .container .main .card-one .q-four { 
+        padding: 10px 20px;
+    }
+
+    .light-font-card-one {
+        font-size: 8px;
+        opacity: .5;
+    }
+
+    .container .main .card-one .q-two p:nth-of-type(2) {
+        font-size: 20px;
+    }
+
+    .container .main .card-one .q-three {
+        font-size: 8px;
+    }
+
+    .container .main .card-one .q-four {
+        font-size: 9px;
+    }
+    
+    .container .main .card-one .q-four img {
+        width: 50px;
+        padding: unset;
+    }
+
+    .container .main .card-two {
+        margin-top:20px ;
+        margin-bottom: 20px;
+        transform: rotate(5deg);
+
+    }
+
+    .container > .end-cards {
+        flex-direction: column;
+    }
+
+    
+
+    .container > .main:hover { 
+        .card-one {
+            transform: none !important;
+        }
+        .card-two {
+            transform: none !important; 
+        }
+    }
+
+
+    /* End Main Cards */
+
+
+
+    /* Start End Cards */
+    
+    
+    .container .end-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+        
+    .container .end-cards .card-one,
+    .container .end-cards .card-two,
+    .container .end-cards .card-three { 
+        width: 220px;
+        height: 180px;
+        margin-top: 10px;
+        margin-bottom: 10px ;
+    }
+
+    .container .end-cards .card-one .header,
+    .container .end-cards .card-two .header,
+    .container .end-cards .card-three .header {
+        padding-top: 10px;
+    }
+    
+    .container .end-cards .card-one .header .left,
+    .container .end-cards .card-two .header .left,
+    .container .end-cards .card-three .header .left {
+        font-size: 10px;
+    }
+
+    .container .end-cards .card-one .header .right,
+    .container .end-cards .card-two .header .right,
+    .container .end-cards .card-three .header .right {
+        font-size: 15px;
+        font-family: var(--primary-font);
+    }
+
+    .container .end-cards .card-one img ,
+    .container .end-cards .card-two img ,
+    .container .end-cards .card-three img {
+        padding: 5px;
+    }
+    .container > p {
+        display: none;
+    }
+
+    /* EndEnd Cards */
+
+}
+
+
